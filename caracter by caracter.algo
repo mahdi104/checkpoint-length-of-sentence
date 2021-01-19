@@ -1,0 +1,27 @@
+ALGORITHM Phrase
+VAR
+    c : CHAR := '';
+    nb_char : INTEGER;
+    nb_word : INTEGER;
+    nb_vow : INTEGER;
+BEGIN
+    nb_char:=0; 
+    nb_word:=0; 
+    nb_vow:=0; 
+    WHILE (c <> '.') DO
+        Read(c);
+        nb_char := nb_char +1;
+        IF (c.ToUpper in['A','E','I','O','U']) THEN
+            nb_vow := nb_vow +1;
+        END_IF
+
+        IF (c=' ') THEN
+            nb_word := nb_word +1;
+        END_IF
+        
+    END_WHILE
+
+    Write("The length of the sentence is ",nb_char);
+    Write("The number of words in the sentence is ",nb_word);
+    Write("he number of vowels in the sentence. is ",nb_vow);
+END
